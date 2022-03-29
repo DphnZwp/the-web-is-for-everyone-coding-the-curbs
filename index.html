@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      sizes="192x192"
+      href="https://static.wixstatic.com/media/21dd0d_b853e3da14384a35a71b4995288f5b5d%7Emv2.jpg/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/21dd0d_b853e3da14384a35a71b4995288f5b5d%7Emv2.jpg"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Coding the Curbs | The smart city of tommorow</title>
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+        <img
+          class="logo"
+          src="assets/CTC_Primary_Logo_Black.png"
+          alt="logo van Coding the Curbs"
+        />
+      </a>
+      <nav>
+        <div class="hamburger-flex">
+          <svg id="hamburger" viewBox="0 0 100 80" width="40" height="40">
+            <rect rx="10"></rect>
+            <rect y="30" rx="10"></rect>
+            <rect y="60" rx="10"></rect>
+          </svg>
+          <label class="hamburger-label" for="hamburger"> Menu </label>
+        </div>
+        <img class="close-button" src="assets/svgs/close-blue.svg" alt="" />
+        <ul class="primary-navigation">
+          <li>
+            <a href="index.html#use-cases">Use-cases</a>
+          </li>
+          <li>
+            <a class="active" href="#smartzones">Smart zones</a>
+          </li>
+          <li>
+            <a href="index.html#product">Product</a>
+          </li>
+          <li>
+            <a href="index.html#services">Services</a>
+          </li>
+          <li>
+            <a href="index.html#updates">Updates</a>
+          </li>
+          <li>
+            <a href="index.html#about">Over ons</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+          <button>Sluit je aan</button>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="smartzones">
+        <h1 class="style-h2">Smart Zones</h1>
+        <p>
+          Hier is een overzicht met smartzones. Je kan ook smartzones sorteren
+          op naam, functie, stad en locatie.
+        </p>
+      </section>
+      <form
+        id="smartzonePostForm"
+        action="https://codingthecurbs.api.fdnd.nl/v1/smartzone"
+        method="post"
+      >
+        <img class="close-button-post" src="assets/svgs/close.svg" alt="" />
+        <h2 class="style-h3">Smart zone toevoegen</h2>
+        <div>
+          <label for="name">Naam</label>
+          <input type="text" id="name" />
+        </div>
+        <div>
+          <label for="town">Stad</label>
+          <input type="text" id="town" />
+        </div>
+        <div>
+          <label for="location">Locatie</label>
+          <input type="text" id="location" />
+        </div>
+        <div>
+          <label for="function">Functie</label>
+          <input type="text" id="function" />
+        </div>
+        <div>
+          <label for="time">Tijdstip</label>
+          <input type="text" id="time" />
+        </div>
+        <div>
+          <label for="size">Grootte (plek)</label>
+          <input type="text" id="size" />
+        </div>
+        <div>
+          <label for="utilization">Gebruik (%)</label>
+          <input type="text" id="utilization" />
+        </div>
+        <div>
+          <label for="description">Omschrijving</label>
+          <input type="text" id="description" />
+        </div>
+        <div>
+          <label for="image">Foto (url)</label>
+          <input type="text" placeholder="https://foto.com" id="image" />
+        </div>
+        <div class="form-buttons">
+          <button type="submit">Toevoegen</button>
+          <button type="reset">Annuleren</button>
+        </div>
+      </form>
+
+      <form
+        id="smartzonePutForm"
+        action="https://codingthecurbs.api.fdnd.nl/v1/smartzone"
+        method="post"
+      >
+        <img class="close-button-put" src="assets/svgs/close.svg" alt="" />
+        <h2 class="style-h3">Smart zone bewerken</h2>
+        <div>
+          <label for="smartzoneId">SmartzoneId</label>
+          <input type="number" id="smartzoneId" />
+        </div>
+        <div>
+          <label for="name">Naam</label>
+          <input type="text" id="name" />
+        </div>
+        <div>
+          <label for="town">Stad</label>
+          <input type="text" id="town" />
+        </div>
+        <div>
+          <label for="location">Locatie</label>
+          <input type="text" id="location" />
+        </div>
+        <div>
+          <label for="function">Functie</label>
+          <input type="text" id="function" />
+        </div>
+        <div>
+          <label for="time">Tijdstip</label>
+          <input type="text" id="time" />
+        </div>
+        <div>
+          <label for="size">Grootte (plek)</label>
+          <input type="text" id="size" />
+        </div>
+        <div>
+          <label for="utilization">Gebruik (%)</label>
+          <input type="text" id="utilization" />
+        </div>
+        <div>
+          <label for="description">Omschrijving</label>
+          <input type="text" id="description" />
+        </div>
+        <div>
+          <label for="image">Foto (url)</label>
+          <input type="text" placeholder="https://foto.com" id="image" />
+        </div>
+        <div class="form-buttons">
+          <button type="submit">Bewerken</button>
+          <button type="reset">Annuleren</button>
+        </div>
+      </form>
+
+      <form
+        id="smartzoneDeleteForm"
+        action="https://codingthecurbs.api.fdnd.nl/v1/smartzone"
+        method="post"
+      >
+        <img class="close-button-delete" src="assets/svgs/close.svg" alt="" />
+        <h2 class="style-h3">Smart zone verwijderen</h2>
+        <div>
+          <label for="smartzoneId">SmartzoneId</label>
+          <input type="number" id="smartzoneId" />
+        </div>
+        <div class="form-buttons">
+          <button type="submit">Verwijderen</button>
+          <button type="reset">Annuleren</button>
+        </div>
+      </form>
+      <article class="smartzone-buttons">
+        <button class="toggle-form-post">Smart zone toevoegen</button>
+        <button class="toggle-form-put">Smart zone bewerken</button>
+        <button class="toggle-form-delete">Smart zone verwijderen</button>
+        <button class="toggle-all-smartzones">Alle smart zones</button>
+      </article>
+      <article class="sorting"></article>
+      <section class="empty-state">
+        <img src="assets/svgs/sad.svg" alt="Afbeelding empty state" />
+        <h2>Er is nog niets geladen...</h2>
+        <p>Zet JavaScript aan en laad de website opnieuw.</p>
+      </section>
+      <article class="loading-state"></article>
+      <section class="tables"></section>
+    </main>
+  </body>
+</html>
