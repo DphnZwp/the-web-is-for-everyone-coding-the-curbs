@@ -27,7 +27,7 @@ body {
 }
 
 main {
-  padding: 22em 1em 5em 1em;
+  padding: 21em 1em 5em 1em;
 }
 
 h1,
@@ -38,7 +38,8 @@ p {
 }
 
 h1 {
-  font-size: 6.25rem;
+  font-weight: 600;
+  font-size: 3.125rem;
   text-align: center;
 }
 
@@ -122,54 +123,8 @@ header {
   height: 2.8em;
 }
 
-.hamburger-flex {
-  margin: 2.5em 0 1em 0;
-  display: flex;
-  justify-content: flex-end;
-}
-
-label.hamburger-label {
-  margin-right: 6.5em;
-  font-weight: 700;
-  display: block;
-  margin-top: 3.2em;
-}
-
-#hamburger {
-  margin-right: 6em;
-  position: absolute;
-  fill: var(--blue);
-  width: 3.2rem;
-  height: auto;
-  cursor: pointer;
-  display: block;
-  z-index: 1;
-}
-
-#hamburger > rect {
-  width: 100px;
-  height: 20px;
-}
-
-.menu-close {
-  display: none;
-}
-
-.close-button-dissapear {
-  opacity: 0;
-}
-
-.close-button {
-  position: absolute;
-  width: 3.3em;
-  background-color: var(--white);
-  margin-top: -5.8em;
-  margin-left: 21em;
-  z-index: 2;
-  cursor: pointer;
-}
-
-ul {
+.primary-navigation {
+  margin-top: 7em;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
@@ -196,16 +151,6 @@ header a {
 
 li {
   list-style: none;
-}
-
-.style-h2 {
-  font-size: 3.125rem;
-  font-weight: 600;
-}
-
-.style-h3 {
-  font-size: 1.875rem;
-  font-weight: 600;
 }
 
 .smartzone-buttons {
@@ -528,33 +473,8 @@ button[type='submit'] {
     flex-wrap: nowrap;
   }
 
-  .hamburger-grid {
-    display: block;
-  }
-
-  label.hamburger-label {
-    display: none;
-  }
-
   .logo {
     position: relative;
-  }
-
-  .hamburger-flex {
-    margin: 0;
-  }
-
-  #hamburger {
-    position: relative;
-    display: none;
-  }
-
-  .hamburger-label {
-    display: none;
-  }
-
-  .close-button {
-    display: none;
   }
 
   button {

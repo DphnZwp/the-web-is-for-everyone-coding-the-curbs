@@ -2,25 +2,31 @@
   "name": "the-web-is-for-everyone-coding-the-curbs",
   "version": "1.0.0",
   "description": "> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)",
-  "main": "scripts/index.js",
+  "main": "main.js",
   "directories": {
     "doc": "docs"
   },
+  "keywords": [
+    "node",
+    "express",
+    "ejs"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node scripts/index.js"
+    "start": "node main.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DphnZwp/the-web-is-for-everyone-coding-the-curbs.git"
   },
-  "author": "",
+  "author": "Daphne Zwuup",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DphnZwp/the-web-is-for-everyone-coding-the-curbs/issues"
   },
   "homepage": "https://github.com/DphnZwp/the-web-is-for-everyone-coding-the-curbs#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.3"
   }
 }
