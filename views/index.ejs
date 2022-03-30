@@ -13,42 +13,44 @@
   <button class="toggle-form-delete">Smart zone verwijderen</button>
   <button class="toggle-all-smartzones">Alle smart zones</button>
 </article>
-
-<% smartzones.forEach((smartzone) => { %>
-  <table>
-    <tbody><tr>
-        <th>Naam</th>
-        <td><%- smartzone.name %></td>
-    </tr>
-    <tr>
-        <th>Stad</th>
-        <td><%- smartzone.town %></td>
-    </tr>
-    <tr>
-        <th>Locatie</th>
-        <td><%- smartzone.location %></td>
-    </tr>
-    <tr>
-        <th>functie</th>
-        <td><%- smartzone.function %></td>
-    </tr>
-    <tr>
-        <th>Tijdstip</th>
-        <td><%- smartzone.time %></td>
-    </tr>
-    <tr>
-        <th>Grootte (plek)</th>
-        <td><%- smartzone.size %></td>
-    </tr>
-    <tr>
-        <th>Gebruik (%)</th>
-        <td><%- smartzone.utilization %></td>
-    </tr>
-    <tr>
-        <th>Omschrijving</th>
-        <td><%- smartzone.description %></td>
-    </tr>
-    </tbody></table>
-<% }) %>
+<section class="tables">
+  <% smartzones.forEach((smartzone) => { %>
+    <table>
+      <tbody><tr>
+          <th>Naam</th>
+          <td><%- smartzone.name %></td>
+      </tr>
+      <tr>
+          <th>Stad</th>
+          <td><%- smartzone.town %></td>
+      </tr>
+      <tr>
+          <th>Locatie</th>
+          <td><%- smartzone.location %></td>
+      </tr>
+      <tr>
+          <th>functie</th>
+          <td><%- smartzone.function %></td>
+      </tr>
+      <tr>
+          <th>Tijdstip</th>
+          <td><%- smartzone.time %></td>
+      </tr>
+      <tr>
+          <th>Grootte (plek)</th>
+          <td><%- smartzone.size %></td>
+      </tr>
+      <tr>
+          <th>Gebruik (%)</th>
+          <td><%- smartzone.utilization %></td>
+      </tr>
+      <tr>
+          <th>Omschrijving</th>
+          <td><%- smartzone.description %></td>
+      </tr>
+      </tbody></table>
+      <img src="<%- smartzone.image %>">
+  <% }) %>
+</section>
 
 <%- include('./partials/foot') %>
