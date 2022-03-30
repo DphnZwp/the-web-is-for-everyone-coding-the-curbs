@@ -2,7 +2,7 @@ const express = require('express')
 const { readFile } = require("fs")
 const app = express()
 const port = 9000
-
+// Get html file
 app.get('/', (request, response) => {
     readFile('./index.html', 'utf-8', (err, html)=> {
         if(err){
@@ -12,8 +12,12 @@ app.get('/', (request, response) => {
     })
 })
 
+app.get('/api/smartzone', (request, response) => {
+    response.send([1, 2, 3])
+})
+
 app.listen(port, () => {
-    console.log('Server is working')
+    console.log(`Listening on port ${port}...`)
 })
 
 // Vanilla Node js
@@ -33,4 +37,4 @@ app.listen(port, () => {
 //         }
 //         response.end()
 //     })
-// }).listen(4050)
+// }).listen(9000)
