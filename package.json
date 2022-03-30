@@ -20,13 +20,14 @@
     "url": "git+https://github.com/DphnZwp/the-web-is-for-everyone-coding-the-curbs.git"
   },
   "author": "Daphne Zwuup",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/DphnZwp/the-web-is-for-everyone-coding-the-curbs/issues"
   },
   "homepage": "https://github.com/DphnZwp/the-web-is-for-everyone-coding-the-curbs#readme",
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "node-fetch": "^3.2.3"
   }
 }
