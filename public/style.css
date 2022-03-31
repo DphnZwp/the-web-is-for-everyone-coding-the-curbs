@@ -168,7 +168,7 @@ li {
 }
 
 .toggle-form-post:after {
-  content: url('../assets/svgs/cross.svg');
+  content: url('../assets/icons/cross.svg');
   position: relative;
   top: 0.1em;
   margin-left: 0.5em;
@@ -177,7 +177,7 @@ li {
 }
 
 .toggle-form-post:hover:after {
-  content: url('../assets/svgs/cross-blue.svg');
+  content: url('../assets/icons/cross-blue.svg');
 }
 
 .sorting button:first-child {
@@ -194,7 +194,7 @@ li {
 }
 
 .toggle-all-smartzones:after {
-  content: url('../assets/svgs/down-arrow-white.svg');
+  content: url('../assets/icons/down-arrow.svg');
   position: relative;
   top: 0.1em;
   margin-left: 0.5em;
@@ -202,12 +202,8 @@ li {
   width: 1em;
 }
 
-.toggle-all-smartzones:hover:after {
-  content: url('../assets/svgs/down-arrow-blue.svg');
-}
-
 .toggle-form-put:after {
-  content: url('../assets/svgs/edit.svg');
+  content: url('../assets/icons/edit.svg');
   position: relative;
   top: 0.1em;
   margin-left: 0.5em;
@@ -216,11 +212,11 @@ li {
 }
 
 .toggle-form-put:hover:after {
-  content: url('../assets/svgs/edit-blue.svg');
+  content: url('../assets/icons/edit-blue.svg');
 }
 
 .toggle-form-delete:after {
-  content: url('../assets/svgs/trash.svg');
+  content: url('../assets/icons/trash.svg');
   position: relative;
   top: 0.1em;
   margin-left: 0.5em;
@@ -229,7 +225,7 @@ li {
 }
 
 .toggle-form-delete:hover:after {
-  content: url('../assets/svgs/trash-blue.svg');
+  content: url('../assets/icons/trash-blue.svg');
 }
 
 .close-button-post,
@@ -547,7 +543,7 @@ button[type='submit'] {
   }
 
   img {
-    height: 31.875em;
+    height: 32.6em;
     width: 90%;
     margin-right: 5em;
   }

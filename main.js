@@ -9,6 +9,7 @@ app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.set('views', './views')
 app.use('/assets', express.static('assets'))
+app.use('/assets/icons', express.static('icons'))
 
 app.get('/', (req, res) => {
   // res.send('Hallo wereld!')
