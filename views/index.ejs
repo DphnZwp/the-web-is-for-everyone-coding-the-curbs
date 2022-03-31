@@ -11,7 +11,32 @@
   <button class="toggle-form-post">Smart zone toevoegen</button>
   <button class="toggle-form-put">Smart zone bewerken</button>
   <button class="toggle-form-delete">Smart zone verwijderen</button>
+</article>
+<article class="sorting">
   <button class="toggle-all-smartzones">Alle smart zones</button>
+  <select class="select-function" onchange = "filterSmartzones(this.value)">
+    <option>Sorteer op functie</option>
+    <option>Deelmobiliteit</option>
+    <option>Laden en lossen</option>
+    <option>Laden en lossen Parkeren Deelmobiliteit</option>
+    <option>Laden en lossen Recreatie</option>
+    </select>
+    <select class="select-town" onchange = "filterSmartzones(this.value)">
+    <option>Sorteer op stad</option>
+    <option>Amsterdam</option>
+    <option>Rotterdam</option>
+    <option>Schiedam</option>
+    <option>Utrecht</option>
+    </select>
+    <select class="select-location" onchange = "filterSmartzones(this.value)">
+    <option>Sorteer op locatie</option>
+    <option>Kinkerstraat 272</option>
+    <option>Lange Haven 56</option>
+    <option>Lange Haven 72</option>
+    <option>Overtoom 450</option>
+    <option>West-kruiskade 93</option>
+    <option>Witte de Withstraat 32</option>
+    </select>
 </article>
 <section class="tables">
   <% smartzones.forEach((smartzone) => { %>
