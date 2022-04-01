@@ -21,10 +21,22 @@ app.get('/', (req, res) => {
   })
 })
 
-app.set('port', process.env.PORT || 9000)
+app.get('/smartzone/:smartzoneId', (request, response) => {
+  // response.send('Hallo wereld!')
+  fetchJson(`https://codingthecurbs.api.fdnd.nl/v1/smartzone/${request.params.smartzoneId}`).then(function (
+    jsonData
+  ) {
+    response.render('smartzone', {
+      title: 'Dit is een enkele smartzone',
+      smartzone: jsonData.data[0],
+    })
+  })
+})
 
-const server = app.listen(app.get('port'), () => {
-  console.log(`Application started on port: ${app.get('port')}`)
+const port = process.env.PORT || 9000
+
+const server = app.listen(port, () => {
+  console.log(`Application started on port: ${port}`)
 })
 
 async function fetchJson(url) {

@@ -14,35 +14,15 @@
 </article>
 <article class="sorting">
   <button class="toggle-all-smartzones">Alle smart zones</button>
-  <select name="format" class="select-name" onchange = "filterSmartzones(this.value)">
+  <select name="format" class="select-name">
     <option>Sorteer op naam</option>
     <% smartzones.forEach((smartzone) => { %>
-      <option><%- smartzone.name %></option>
+      <option>Tijn</option>
     <% }) %>
   </select>
-  <select class="select-function" onchange = "filterSmartzones(this.value)">
-    <option>Sorteer op functie</option>
-    <option>Deelmobiliteit</option>
-    <option>Laden en lossen</option>
-    <option>Laden en lossen Parkeren Deelmobiliteit</option>
-    <option>Laden en lossen Recreatie</option>
-    </select>
-    <select class="select-town" onchange = "filterSmartzones(this.value)">
-    <option>Sorteer op stad</option>
-    <option>Amsterdam</option>
-    <option>Rotterdam</option>
-    <option>Schiedam</option>
-    <option>Utrecht</option>
-    </select>
-    <select class="select-location" onchange = "filterSmartzones(this.value)">
-    <option>Sorteer op locatie</option>
-    <option>Kinkerstraat 272</option>
-    <option>Lange Haven 56</option>
-    <option>Lange Haven 72</option>
-    <option>Overtoom 450</option>
-    <option>West-kruiskade 93</option>
-    <option>Witte de Withstraat 32</option>
-    </select>
+  <% smartzones.forEach((smartzone) => { %>
+    <a href="/smartzone/<%- smartzone.smartzoneId %>"><%- smartzone.name %></a>
+  <% }) %>
 </article>
 <section class="tables">
   <% 
