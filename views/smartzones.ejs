@@ -17,46 +17,11 @@
   <select class="select-name" onChange="window.location.href=this.value">
     <option value="/">Filter op naam</option>
     <option value="smartzone/tijn">Tijn</option> 
-    <option value="/smartzone/sarah">Sarah</option>
+    <option value="smartzone/sarah">Sarah</option>
   </select> 
-  <!-- </select>
-  <select class="select-function">
-    <option>Sorteer op functie</option>
-    <option>Deelmobiliteit</option>
-    <option>Laden en lossen</option>
-    <option>Laden en lossen Parkeren Deelmobiliteit</option>
-    <option>Laden en lossen Recreatie</option>
-    </select>
-    <select class="select-town">
-    <option>Sorteer op stad</option>
-    <option>Amsterdam</option>
-    <option>Rotterdam</option>
-    <option>Schiedam</option>
-    <option>Utrecht</option>
-    </select>
-    <select class="select-location">
-    <option>Sorteer op locatie</option>
-    <option>Kinkerstraat 272</option>
-    <option>Lange Haven 56</option>
-    <option>Lange Haven 72</option>
-    <option>Overtoom 450</option>
-    <option>West-kruiskade 93</option>
-    <option>Witte de Withstraat 32</option>
-    </select> -->
-      <select class="select-name" onChange="window.location.href=this.value">
-        <% smartzones.forEach((smartzone) => { %>
-          <option value="/">Filter op naam</option>
-        <option value="/smartzone/<%- smartzone.smartzoneId %>"><%- smartzone.name %></option>
-        <% }) %>
-      </select>
 </article>
 <section class="tables">
-  <% 
-  smartzones
-    .filter((smartzone) => {
-      return smartzone.town === 'Utrecht'
-    })
-    .map((smartzone) => { %>
+  <% smartzones.forEach((smartzone) => { %>
     <table>
       <tbody><tr>
           <th>Naam</th>

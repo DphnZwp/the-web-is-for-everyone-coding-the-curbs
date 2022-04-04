@@ -63,6 +63,7 @@ p {
 button {
   padding: 0.9em 3em;
   margin: 1em 0;
+  font-family: 'Rajdhani', sans-serif;
   display: block;
   font-size: 1rem;
   font-weight: 500;
@@ -180,26 +181,34 @@ li {
   content: url('../assets/icons/cross-blue.svg');
 }
 
-.sorting button:first-child {
+.all-smartzones {
+  padding: 0.9em 3em;
+  margin: 1em 0;
+  display: block;
   font-size: 1rem;
+  font-weight: 500;
+  width: max-content;
+  border-radius: 2em;
+  cursor: pointer;
   color: #000;
   background: white;
   box-shadow: inset 0px 0px 0px 2.4px var(--dark-blue);
 }
 
-.sorting button:first-child:hover {
+.all-smartzones:hover {
   font-size: 1rem;
+  color: var(--black);
   background: white;
   box-shadow: inset 0px 0px 0px 2.4px var(--dark-blue);
 }
 
-.toggle-all-smartzones:after {
-  content: url('../assets/icons/down-arrow.svg');
+.all-smartzones:after {
+  content: url('../assets/icons/right-arrow.svg');
   position: relative;
-  top: 0.1em;
+  top: 0.25em;
   margin-left: 0.5em;
   display: inline-block;
-  width: 1em;
+  width: 0.7em;
 }
 
 .toggle-form-put:after {
@@ -228,99 +237,44 @@ li {
   content: url('../assets/icons/trash-blue.svg');
 }
 
-.close-button-post,
-.close-button-put,
-.close-button-delete {
-  display: block;
-  margin-left: auto;
-  margin-right: 0;
+.select-name, 
+.select-function,
+.select-town,
+.select-location {
+  padding: 0 1em;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 55.8 33.4' style='enable-background:new 0 0 55.8 33.4;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M31.8,31.8c0.3-0.3,0.5-0.6,0.7-0.9L54.2,9.3c2.1-2.1,2.1-5.5,0-7.6c-2.1-2.1-5.5-2.1-7.6,0L27.9,20.3L9.2,1.6 c-2.1-2.1-5.5-2.1-7.6,0C0.5,2.6,0,4,0,5.4c0,1.4,0.5,2.8,1.6,3.8l21.7,21.7c0.2,0.3,0.4,0.6,0.7,0.9c1.1,1.1,2.5,1.6,3.9,1.6 C29.3,33.4,30.8,32.9,31.8,31.8z'/%3E%3C/g%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-size: 1em;
+  background-position-y: 1.3em;
+  text-indent: 1em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13.5em;
+  height: 3.3em;
+  border: 0.127em solid var(--dark-blue);
+  border-radius: 2em;
   cursor: pointer;
-  height: min-content;
-  width: 2.5em;
 }
 
 .select-name {
-  margin: 0.5em 0;
-  padding: 0 1em;
-  font-size: 1rem;
-  font-weight: 500;
-  background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 55.8 33.4' style='enable-background:new 0 0 55.8 33.4;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M31.8,31.8c0.3-0.3,0.5-0.6,0.7-0.9L54.2,9.3c2.1-2.1,2.1-5.5,0-7.6c-2.1-2.1-5.5-2.1-7.6,0L27.9,20.3L9.2,1.6 c-2.1-2.1-5.5-2.1-7.6,0C0.5,2.6,0,4,0,5.4c0,1.4,0.5,2.8,1.6,3.8l21.7,21.7c0.2,0.3,0.4,0.6,0.7,0.9c1.1,1.1,2.5,1.6,3.9,1.6 C29.3,33.4,30.8,32.9,31.8,31.8z'/%3E%3C/g%3E%3C/svg%3E%0A");
-  background-repeat: no-repeat;
-  background-position-x: 10em;
-  background-position-y: 1.1em;
-  background-size: 1em;
-  text-indent: 1em;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 13.5em;
-  height: 3em;
-  border: 0.127em solid var(--dark-blue);
-  border-radius: 2em;
-  cursor: pointer;
+  background-position-x: 9em;
+  width: 12.2em;
 }
 
 .select-function {
-  margin: 0.5em 0;
-  padding: 0 1em;
-  font-size: 1rem;
-  font-weight: 500;
-  background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 55.8 33.4' style='enable-background:new 0 0 55.8 33.4;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M31.8,31.8c0.3-0.3,0.5-0.6,0.7-0.9L54.2,9.3c2.1-2.1,2.1-5.5,0-7.6c-2.1-2.1-5.5-2.1-7.6,0L27.9,20.3L9.2,1.6 c-2.1-2.1-5.5-2.1-7.6,0C0.5,2.6,0,4,0,5.4c0,1.4,0.5,2.8,1.6,3.8l21.7,21.7c0.2,0.3,0.4,0.6,0.7,0.9c1.1,1.1,2.5,1.6,3.9,1.6 C29.3,33.4,30.8,32.9,31.8,31.8z'/%3E%3C/g%3E%3C/svg%3E%0A");
-  background-repeat: no-repeat;
   background-position-x: 10.5em;
-  background-position-y: 1.1em;
-  background-size: 1em;
-  text-indent: 1em;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 13.5em;
-  height: 3em;
-  border: 0.127em solid var(--dark-blue);
-  border-radius: 2em;
-  cursor: pointer;
 }
 
 .select-town {
-  margin: 0.5em 0;
-  padding: 0 1em;
-  font-size: 1rem;
-  font-weight: 500;
-  background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 55.8 33.4' style='enable-background:new 0 0 55.8 33.4;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M31.8,31.8c0.3-0.3,0.5-0.6,0.7-0.9L54.2,9.3c2.1-2.1,2.1-5.5,0-7.6c-2.1-2.1-5.5-2.1-7.6,0L27.9,20.3L9.2,1.6 c-2.1-2.1-5.5-2.1-7.6,0C0.5,2.6,0,4,0,5.4c0,1.4,0.5,2.8,1.6,3.8l21.7,21.7c0.2,0.3,0.4,0.6,0.7,0.9c1.1,1.1,2.5,1.6,3.9,1.6 C29.3,33.4,30.8,32.9,31.8,31.8z'/%3E%3C/g%3E%3C/svg%3E%0A");
-  background-repeat: no-repeat;
   background-position-x: 9.5em;
-  background-position-y: 1.1em;
-  background-size: 1em;
-  text-indent: 1em;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 12.5em;
-  height: 3em;
-  border: 0.127em solid var(--dark-blue);
-  border-radius: 2em;
-  cursor: pointer;
 }
 
 .select-location {
-  margin: 0.5em 0;
-  padding: 0 1em;
-  font-size: 1rem;
-  font-weight: 500;
-  background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 55.8 33.4' style='enable-background:new 0 0 55.8 33.4;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M31.8,31.8c0.3-0.3,0.5-0.6,0.7-0.9L54.2,9.3c2.1-2.1,2.1-5.5,0-7.6c-2.1-2.1-5.5-2.1-7.6,0L27.9,20.3L9.2,1.6 c-2.1-2.1-5.5-2.1-7.6,0C0.5,2.6,0,4,0,5.4c0,1.4,0.5,2.8,1.6,3.8l21.7,21.7c0.2,0.3,0.4,0.6,0.7,0.9c1.1,1.1,2.5,1.6,3.9,1.6 C29.3,33.4,30.8,32.9,31.8,31.8z'/%3E%3C/g%3E%3C/svg%3E%0A");
-  background-repeat: no-repeat;
   background-position-x: 10.8em;
-  background-position-y: 1.1em;
-  background-size: 1em;
-  text-indent: 1em;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 13.5em;
-  height: 3em;
-  border: 0.127em solid var(--dark-blue);
-  border-radius: 2em;
-  cursor: pointer;
 }
 
 .loading-state {
@@ -389,6 +343,7 @@ img {
   height: auto;
   width: 100%;
   margin: 1.5em 0;
+  object-fit: cover;
 }
 
 #crud-form > h1 {
@@ -505,12 +460,8 @@ button[type='submit'] {
   .select-location,
   .select-name,
   .select-town,
-  .sorting button:first-child,
-  .sorting button:first-child:hover {
-    font-size: 1.1875rem;
-  }
-
-  .smartzones-button {
+  .all-smartzones,
+  .all-smartzones:hover {
     font-size: 1.1875rem;
   }
 
