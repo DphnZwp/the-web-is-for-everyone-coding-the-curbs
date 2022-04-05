@@ -414,10 +414,6 @@ img {
   object-fit: cover;
 }
 
-#crud-form > h1 {
-  margin: 0 0 0.5em 0;
-}
-
 .buttons-center {
   display: flex;
   justify-content: center;
@@ -527,7 +523,7 @@ button[type='submit'] {
 
   .sorting {
     margin-top: 1.5em;
-    margin-bottom: 1em;
+    margin-bottom: 3em;
     flex-direction: row;
     gap: 1em;
   }
