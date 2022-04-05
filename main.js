@@ -15,9 +15,9 @@ app.set('views', './views')
 app.use('/assets', express.static('assets'))
 app.use('/assets/icons', express.static('icons'))
 
-app.get('/', (req, res) => {
+app.get('/', (request, response) => {
   fetchJson('https://codingthecurbs.api.fdnd.nl/v1/smartzone').then(function (jsonData) {
-    res.render('index', {
+    response.render('index', {
       title: 'Smart Zones',
       smartzones: jsonData.data,
     })
@@ -35,17 +35,6 @@ app.get('/smartzones', (request, response) => {
   })
 })
 
-app.get('/toevoegen', (request, response) => {
-  fetchJson('https://codingthecurbs.api.fdnd.nl/v1/smartzone').then(function (
-    jsonData
-  ) {
-    response.render('toevoegen', {
-      title: 'Alle smartzones',
-      smartzones: jsonData.data,
-    })
-  })
-})
-
 app.get('/name/:smartzoneId', (request, response) => {
   fetchJson(`https://codingthecurbs.api.fdnd.nl/v1/smartzone/${request.params.smartzoneId}`).then(function (
     jsonData
@@ -57,8 +46,19 @@ app.get('/name/:smartzoneId', (request, response) => {
   })
 })
 
+app.get('/toevoegen', (request, response) => {
+  fetchJson('https://codingthecurbs.api.fdnd.nl/v1/smartzone').then(function (
+    jsonData
+  ) {
+    response.render('toevoegen', {
+      title: 'Alle smartzones',
+      smartzones: jsonData.data,
+    })
+  })
+})
+
 // POST form
-app.post('/toevoegen', urlencodedParser, (req,res) =>{
+app.post('/toevoegen', urlencodedParser, (request,response) =>{
   // Prepare output in JSON format
   response = {
       smartzonesId:req.body.smartzonesId,
@@ -72,8 +72,7 @@ app.post('/toevoegen', urlencodedParser, (req,res) =>{
       description:req.body.description,
       image:req.body.image
   }
-  console.log(response)
-  res.end(JSON.stringify(response))
+  response.end(JSON.stringify(response))
 })
 
 const server = app.listen(port, () => {
