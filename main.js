@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 9000
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
+const url = 'https://codingthecurbs.api.fdnd.nl/v1/smartzone'
 // POST
 const bodyParser = require('body-parser')
 const urlencodedParser = bodyParser.urlencoded({extended:false})
@@ -16,7 +17,7 @@ app.use('/assets', express.static('assets'))
 app.use('/assets/icons', express.static('icons'))
 
 app.get('/', (request, response) => {
-  fetchJson('https://codingthecurbs.api.fdnd.nl/v1/smartzone').then(function (jsonData) {
+  fetchJson(url).then(function (jsonData) {
     response.render('index', {
       title: 'Smart Zones',
       smartzones: jsonData.data,
@@ -25,7 +26,7 @@ app.get('/', (request, response) => {
 })
 
 app.get('/smartzones', (request, response) => {
-  fetchJson('https://codingthecurbs.api.fdnd.nl/v1/smartzone').then(function (
+  fetchJson(url).then(function (
     jsonData
   ) {
     response.render('smartzones', {
@@ -35,8 +36,8 @@ app.get('/smartzones', (request, response) => {
   })
 })
 
-app.get('/name/:smartzoneId', (request, response) => {
-  fetchJson(`https://codingthecurbs.api.fdnd.nl/v1/smartzone/${request.params.smartzoneId}`).then(function (
+app.get('smartzones/name/:smartzoneId', (request, response) => {
+  fetchJson(`${url}/${request.params.smartzoneId}`).then(function (
     jsonData
   ) {
     response.render('name', {
@@ -46,87 +47,38 @@ app.get('/name/:smartzoneId', (request, response) => {
   })
 })
 
-app.get('/toevoegen', (request, response) => {
-  fetchJson('https://codingthecurbs.api.fdnd.nl/v1/smartzone').then(function (
-    jsonData
-  ) {
-    response.render('toevoegen', {
-      title: 'Alle smartzones',
-      smartzones: jsonData.data,
-    })
-  })
-})
-
 // POST form
-app.post('/toevoegen', urlencodedParser, (request,response) =>{
-  // Prepare output in JSON format
-  response = {
-      name:req.body.name,
-      town:req.body.town,
-      location:req.body.location,
-      function:req.body.function,
-      time: req.body.time,
-      size:req.body.size,
-      utilization:req.body.utilization,
-      description:req.body.description,
-      image:req.body.image
+app.post('/add', urlencodedParser, (request,response) =>{
+  const postData = {
+    method: 'post',
+    body: JSON.stringify(request.body),
+    headers: {'Content-Type': 'application/json'}
   }
-  response.end(JSON.stringify(response))
-})
-
-app.get('/bewerken', (request, response) => {
-  fetchJson('https://codingthecurbs.api.fdnd.nl/v1/smartzone').then(function (
-    jsonData
-  ) {
-    response.render('bewerken', {
-      title: 'Alle smartzones',
+  fetchJson(url, postData).then(function (jsonData) {
+    response.render('add', {
+      title: 'Smartzone toevoegen',
       smartzones: jsonData.data,
     })
   })
 })
 
-app.put('/bewerken', urlencodedParser, (request,response) =>{
-  // Prepare output in JSON format
-  response = {
-      smartzoneId:req.body.smartzoneId,
-      name:req.body.name,
-      town:req.body.town,
-      location:req.body.location,
-      function:req.body.function,
-      time: req.body.time,
-      size:req.body.size,
-      utilization:req.body.utilization,
-      description:req.body.description,
-      image:req.body.image
-  }
-  response.end(JSON.stringify(response))
-})
-
-app.get('/verwijderen', (request, response) => {
-  fetchJson('https://codingthecurbs.api.fdnd.nl/v1/smartzone').then(function (
+app.get('/add', (request, response) => {
+  fetchJson(url).then(function (
     jsonData
   ) {
-    response.render('verwijderen', {
-      title: 'Alle smartzones',
+    response.render('add', {
+      title: 'Smartzone toevoegen',
       smartzones: jsonData.data,
     })
   })
-})
-
-app.delete('/verwijderen', urlencodedParser, (request,response) =>{
-  // Prepare output in JSON format
-  response = {
-    smartzoneId:req.body.smartzoneId,
-  }
-  response.end(JSON.stringify(response))
 })
 
 const server = app.listen(port, () => {
   console.log(`Application started on port: ${port}`)
 })
 
-async function fetchJson(url) {
-  return await fetch(url)
+async function fetchJson(url, postData = {}) {
+  return await fetch(url, postData)
     .then((response) => response.json())
     .catch((error) => error)
 }

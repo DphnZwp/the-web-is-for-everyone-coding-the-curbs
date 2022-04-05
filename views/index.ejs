@@ -9,7 +9,7 @@
 </section>
 
 <article class="smartzone-buttons">
-  <a class="button-post" href="/toevoegen">Smart zone toevoegen</a>
+  <a class="button-post" href="/add">Smart zone toevoegen</a>
   <a class="button-post" href="/put">Smart zone bewerken</a>
   <a class="button-post" href="/delete">Smart zone verwijderen</a>
 </article>
@@ -19,7 +19,7 @@
   <select class="select-name" onChange="window.location.href=this.value">
     <option value="/">Filter op naam</option>
     <% smartzones.forEach((smartzone) => { %>
-    <option value="/name/<%- smartzone.smartzoneId %>"><%- smartzone.name %></option>
+    <option value="/smartzones/name/<%- smartzone.smartzoneId %>"><%- smartzone.name %></option>
     <% }) %>
   </select>
   <!--
