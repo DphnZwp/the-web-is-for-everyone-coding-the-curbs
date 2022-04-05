@@ -38,7 +38,7 @@ app.get('/smartzones', (request, response) => {
 })
 
 // Filter name
-app.get('smartzones/name/:smartzoneId', (request, response) => {
+app.get('/smartzones/name/:smartzoneId', (request, response) => {
   fetchJson(`${url}/${request.params.smartzoneId}`).then(function (
     jsonData
   ) {
