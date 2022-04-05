@@ -303,7 +303,7 @@ li {
 }
 
 .button-delete:hover:after {
-  content: url('../assets/icons/trash.svg');
+  content: url('../assets/icons/trash-blue.svg');
 }
 .select-name, 
 .select-function,
