@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 9000
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
+// POST
+const bodyParser = require('body-parser')
+const urlencodedParser = bodyParser.urlencoded({extended:false})
 
 // Serve public files
 app.use(express.static('public'))
@@ -32,38 +35,45 @@ app.get('/smartzones', (request, response) => {
   })
 })
 
-app.get('/smartzone/:smartzoneId', (request, response) => {
-  // response.send('Hallo wereld!')
+app.get('/toevoegen', (request, response) => {
+  fetchJson('https://codingthecurbs.api.fdnd.nl/v1/smartzone').then(function (
+    jsonData
+  ) {
+    response.render('toevoegen', {
+      title: 'Alle smartzones',
+      smartzones: jsonData.data,
+    })
+  })
+})
+
+app.get('/name/:smartzoneId', (request, response) => {
   fetchJson(`https://codingthecurbs.api.fdnd.nl/v1/smartzone/${request.params.smartzoneId}`).then(function (
     jsonData
   ) {
-    response.render('smartzone', {
-      title: 'Dit is een enkele smartzone',
-      smartzone: jsonData.data[0],
+    response.render('name', {
+      title: 'Smart zone van',
+      name: jsonData.data[0],
     })
   })
 })
 
-app.get('/smartzone/tijn', (request, response) => {
-  fetchJson('https://codingthecurbs.api.fdnd.nl/v1/smartzone').then(function (
-    jsonData
-  ) {
-    response.render('tijn', {
-      title: 'Dit is een enkele smartzone',
-      smartzones: jsonData.data,
-    })
-  })
-})
-
-app.get('/smartzone/sarah', (request, response) => {
-  fetchJson('https://codingthecurbs.api.fdnd.nl/v1/smartzone').then(function (
-    jsonData
-  ) {
-    response.render('sarah', {
-      title: 'Smartzones',
-      smartzones: jsonData.data,
-    })
-  })
+// POST form
+app.post('/toevoegen', urlencodedParser, (req,res) =>{
+  // Prepare output in JSON format
+  response = {
+      smartzonesId:req.body.smartzonesId,
+      name:req.body.name,
+      town:req.body.town,
+      location:req.body.location,
+      function:req.body.function,
+      time: req.body.time,
+      size:req.body.size,
+      utilization:req.body.utilization,
+      description:req.body.description,
+      image:req.body.image
+  }
+  console.log(response)
+  res.end(JSON.stringify(response))
 })
 
 const server = app.listen(port, () => {

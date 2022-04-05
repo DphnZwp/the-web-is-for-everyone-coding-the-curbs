@@ -168,7 +168,27 @@ li {
   align-items: center;
 }
 
-.toggle-form-post:after {
+.button-post {
+  padding: 0.9em 3em;
+  font-family: 'Rajdhani', sans-serif;
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  width: max-content;
+  background-image: var(--cta-color);
+  border: none;
+  border-radius: 2em;
+  cursor: pointer;
+}
+
+.button-post:hover {
+  color: var(--blue);
+  background: white;
+  box-shadow: inset 0px 0px 0px 2px var(--blue);
+}
+
+.button-post:after {
   content: url('../assets/icons/cross.svg');
   position: relative;
   top: 0.1em;
@@ -177,11 +197,11 @@ li {
   width: 1em;
 }
 
-.toggle-form-post:hover:after {
+.button-post:hover:after {
   content: url('../assets/icons/cross-blue.svg');
 }
 
-.all-smartzones {
+.white-button {
   padding: 0.9em 3em;
   margin: 1em 0;
   display: block;
@@ -195,20 +215,20 @@ li {
   box-shadow: inset 0px 0px 0px 2.4px var(--dark-blue);
 }
 
-.all-smartzones:hover {
+.white-button:hover {
   font-size: 1rem;
   color: var(--black);
   background: white;
   box-shadow: inset 0px 0px 0px 2.4px var(--dark-blue);
 }
 
-.all-smartzones:after {
+.white-button:after {
   content: url('../assets/icons/right-arrow.svg');
   position: relative;
-  top: 0.25em;
+  top: 0.2em;
   margin-left: 0.5em;
   display: inline-block;
-  width: 0.7em;
+  width: 0.5em;
 }
 
 .toggle-form-put:after {
@@ -261,7 +281,7 @@ li {
 }
 
 .select-name {
-  background-position-x: 9em;
+  background-position-x: 8.5em;
   width: 12.2em;
 }
 
@@ -358,14 +378,9 @@ img {
 }
 
 form {
-  width: 100%;
   padding: 4em 1em;
   background-color: var(--grey);
-  display: none;
-}
-
-.form-show {
-  display: block;
+  width: 100%;
 }
 
 form label {
@@ -460,8 +475,10 @@ button[type='submit'] {
   .select-location,
   .select-name,
   .select-town,
-  .all-smartzones,
-  .all-smartzones:hover {
+  .white-button,
+  .white-button:hover,
+  .button-post,
+  .button-post:hover {
     font-size: 1.1875rem;
   }
 

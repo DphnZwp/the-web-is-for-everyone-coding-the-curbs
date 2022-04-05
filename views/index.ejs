@@ -8,33 +8,34 @@
   </p>
 </section>
 <article class="smartzone-buttons">
-  <button class="toggle-form-post">Smart zone toevoegen</button>
+  <a class="button-post" href="/toevoegen">Smart zone toevoegen</a>
   <button class="toggle-form-put">Smart zone bewerken</button>
   <button class="toggle-form-delete">Smart zone verwijderen</button>
 </article>
 <article class="sorting">
-  <a class="all-smartzones" href="/smartzones">Alle smart zones</a>
+  <a class="white-button" href="/smartzones">Alle smart zones</a>
   <select class="select-name" onChange="window.location.href=this.value">
     <option value="/">Filter op naam</option>
-    <option value="smartzone/tijn">Tijn</option> 
-    <option value="/smartzone/sarah">Sarah</option>
-  </select> 
-  <!-- </select>
+    <% smartzones.forEach((smartzone) => { %>
+    <option value="/name/<%- smartzone.smartzoneId %>"><%- smartzone.name %></option>
+    <% }) %>
+  </select>
+  <!--
   <select class="select-function">
     <option>Sorteer op functie</option>
     <option>Deelmobiliteit</option>
     <option>Laden en lossen</option>
     <option>Laden en lossen Parkeren Deelmobiliteit</option>
     <option>Laden en lossen Recreatie</option>
-    </select>
-    <select class="select-town">
+  </select>
+  <select class="select-town">
     <option>Sorteer op stad</option>
     <option>Amsterdam</option>
     <option>Rotterdam</option>
     <option>Schiedam</option>
     <option>Utrecht</option>
-    </select>
-    <select class="select-location">
+  </select>
+  <select class="select-location">
     <option>Sorteer op locatie</option>
     <option>Kinkerstraat 272</option>
     <option>Lange Haven 56</option>
@@ -42,13 +43,7 @@
     <option>Overtoom 450</option>
     <option>West-kruiskade 93</option>
     <option>Witte de Withstraat 32</option>
-    </select> -->
-      <select class="select-name" onChange="window.location.href=this.value">
-        <% smartzones.forEach((smartzone) => { %>
-          <option value="/">Filter op naam</option>
-        <option value="/smartzone/<%- smartzone.smartzoneId %>"><%- smartzone.name %></option>
-        <% }) %>
-      </select>
+  </select> -->
 </article>
 <section class="tables">
   <% 
