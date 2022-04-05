@@ -10,51 +10,70 @@
 
 <article class="smartzone-buttons">
   <a class="button-post" href="/toevoegen">Smart zone toevoegen</a>
-  <a class="button-post" href="/put">Smart zone bewerken</a>
+  <button class="toggle-form-put">Smart zone bewerken</button>
   <button class="toggle-form-delete">Smart zone verwijderen</button>
 </article>
 
+<form action="https://codingthecurbs.api.fdnd.nl/v1/smartzone" method="post">
+  <h2 class="style-h3">Smart zone bewerken</h2>
+  <div>
+    <label for="smartzoneId">SmartzoneId</label>
+    <input type="number" name="smartzoneId" />
+  </div>
+  <div>
+    <label for="name">Naam</label>
+    <input type="text" name="name" />
+  </div>
+  <div>
+    <label for="town">Stad</label>
+    <input type="text" name="town" />
+  </div>
+  <div>
+    <label for="location">Locatie</label>
+    <input type="text" name="location" />
+  </div>
+  <div>
+    <label for="function">Functie</label>
+    <input type="text" name="function" />
+  </div>
+  <div>
+    <label for="time">Tijdstip</label>
+    <input type="text" name="time" />
+  </div>
+  <div>
+    <label for="size">Grootte (plek)</label>
+    <input type="text" name="size" />
+  </div>
+  <div>
+    <label for="utilization">Gebruik (%)</label>
+    <input type="text" name="utilization" />
+  </div>
+  <div>
+    <label for="description">Omschrijving</label>
+    <input type="text" name="description" />
+  </div>
+  <div>
+    <label for="image">Foto (url)</label>
+    <input type="text" placeholder="https://foto.com" name="image" />
+  </div>
+  <div class="form-buttons">
+    <button type="submit">Toevoegen</button>
+    <button type="reset">Annuleren</button>
+  </div>
+</form>
+
 <article class="sorting">
-  <a class="white-button" href="/smartzones">Alle smart zones</a>
+  <a class="white-button" href="/">Terug naar smart zones</a>
   <select class="select-name" onChange="window.location.href=this.value">
     <option value="/">Filter op naam</option>
     <% smartzones.forEach((smartzone) => { %>
     <option value="/name/<%- smartzone.smartzoneId %>"><%- smartzone.name %></option>
     <% }) %>
   </select>
-  <!--
-  <select class="select-function">
-    <option>Sorteer op functie</option>
-    <option>Deelmobiliteit</option>
-    <option>Laden en lossen</option>
-    <option>Laden en lossen Parkeren Deelmobiliteit</option>
-    <option>Laden en lossen Recreatie</option>
-  </select>
-  <select class="select-town">
-    <option>Sorteer op stad</option>
-    <option>Amsterdam</option>
-    <option>Rotterdam</option>
-    <option>Schiedam</option>
-    <option>Utrecht</option>
-  </select>
-  <select class="select-location">
-    <option>Sorteer op locatie</option>
-    <option>Kinkerstraat 272</option>
-    <option>Lange Haven 56</option>
-    <option>Lange Haven 72</option>
-    <option>Overtoom 450</option>
-    <option>West-kruiskade 93</option>
-    <option>Witte de Withstraat 32</option>
-  </select> -->
 </article>
 
 <section class="tables">
-  <% 
-  smartzones
-    .filter((smartzone) => {
-      return smartzone.town === 'Utrecht'
-    })
-    .map((smartzone) => { %>
+  <% smartzones.forEach((smartzone) => { %>
     <table>
       <tbody><tr>
           <th>Naam</th>

@@ -61,6 +61,33 @@ app.get('/toevoegen', (request, response) => {
 app.post('/toevoegen', urlencodedParser, (request,response) =>{
   // Prepare output in JSON format
   response = {
+      name:req.body.name,
+      town:req.body.town,
+      location:req.body.location,
+      function:req.body.function,
+      time: req.body.time,
+      size:req.body.size,
+      utilization:req.body.utilization,
+      description:req.body.description,
+      image:req.body.image
+  }
+  response.end(JSON.stringify(response))
+})
+
+app.get('/bewerken', (request, response) => {
+  fetchJson('https://codingthecurbs.api.fdnd.nl/v1/smartzone').then(function (
+    jsonData
+  ) {
+    response.render('bewerken', {
+      title: 'Alle smartzones',
+      smartzones: jsonData.data,
+    })
+  })
+})
+
+app.put('/bewerken', urlencodedParser, (request,response) =>{
+  // Prepare output in JSON format
+  response = {
       smartzonesId:req.body.smartzonesId,
       name:req.body.name,
       town:req.body.town,
