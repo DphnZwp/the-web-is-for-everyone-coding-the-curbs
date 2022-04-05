@@ -31,7 +31,7 @@ app.get('/smartzones', (request, response) => {
     jsonData
   ) {
     response.render('smartzones', {
-      title: 'Alle smartzones',
+      title: 'Alle smart zones',
       smartzones: jsonData.data,
     })
   })
