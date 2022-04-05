@@ -14,6 +14,18 @@
   <a class="button-post" href="/verwijderen">Smart zone toevoegen</a>
 </article>
 
+<form action="https://codingthecurbs.api.fdnd.nl/v1/smartzone" method="post">
+  <h2 class="style-h3">Smart zone verwijderen</h2>
+  <div>
+    <label for="smartzoneId">SmartzoneId</label>
+    <input type="number" name="smartzoneId" />
+  </div>
+  <div class="form-buttons">
+    <button type="submit">Verwijderen</button>
+    <button type="reset">Annuleren</button>
+  </div>
+</form>
+
 <article class="sorting">
   <a class="white-button" href="/">Terug naar smart zones</a>
   <select class="select-name" onChange="window.location.href=this.value">
