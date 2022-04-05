@@ -14,8 +14,12 @@
   <button class="toggle-form-delete">Smart zone verwijderen</button>
 </article>
 
+<article class="sorting">
+  <a class="white-button left-arrow" href="/">Terug naar smart zones</a>
+  <a class="white-button right-arrow" href="/smartzones">Alle smart zones</a>
+</article>
+
 <form action="/add" method="post">
-  <h2 class="style-h3">Smart zone toevoegen</h2>
   <div>
     <label for="name">Naam</label>
     <input type="text" name="name" />
@@ -57,55 +61,5 @@
     <button type="reset">Annuleren</button>
   </div>
 </form>
-
-<article class="sorting">
-  <a class="white-button" href="/">Terug naar smart zones</a>
-  <select class="select-name" onChange="window.location.href=this.value">
-    <option value="/">Filter op naam</option>
-    <% smartzones.forEach((smartzone) => { %>
-    <option value="/name/<%- smartzone.smartzoneId %>"><%- smartzone.name %></option>
-    <% }) %>
-  </select>
-</article>
-
-<section class="tables">
-  <% smartzones.forEach((smartzone) => { %>
-    <table>
-      <tbody><tr>
-          <th>Naam</th>
-          <td><%- smartzone.name %></td>
-      </tr>
-      <tr>
-          <th>Stad</th>
-          <td><%- smartzone.town %></td>
-      </tr>
-      <tr>
-          <th>Locatie</th>
-          <td><%- smartzone.location %></td>
-      </tr>
-      <tr>
-          <th>functie</th>
-          <td><%- smartzone.function %></td>
-      </tr>
-      <tr>
-          <th>Tijdstip</th>
-          <td><%- smartzone.time %></td>
-      </tr>
-      <tr>
-          <th>Grootte (plek)</th>
-          <td><%- smartzone.size %></td>
-      </tr>
-      <tr>
-          <th>Gebruik (%)</th>
-          <td><%- smartzone.utilization %></td>
-      </tr>
-      <tr>
-          <th>Omschrijving</th>
-          <td><%- smartzone.description %></td>
-      </tr>
-      </tbody></table>
-      <img src="<%- smartzone.image %>" alt="Google maps afbeelding">
-  <% }) %>
-</section>
 
 <%- include('./partials/foot') %>

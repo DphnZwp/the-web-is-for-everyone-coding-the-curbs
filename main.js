@@ -57,20 +57,14 @@ app.post('/add', urlencodedParser, (request,response) =>{
   fetchJson(url, postData).then(function (jsonData) {
     response.render('add', {
       title: 'Smartzone toevoegen',
-      smartzones: jsonData.data,
     })
   })
 })
 
 app.get('/add', (request, response) => {
-  fetchJson(url).then(function (
-    jsonData
-  ) {
     response.render('add', {
       title: 'Smartzone toevoegen',
-      smartzones: jsonData.data,
     })
-  })
 })
 
 const server = app.listen(port, () => {

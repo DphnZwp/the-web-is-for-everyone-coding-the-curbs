@@ -222,11 +222,20 @@ li {
   box-shadow: inset 0px 0px 0px 2.4px var(--dark-blue);
 }
 
-.white-button:after {
+.right-arrow:after {
   content: url('../assets/icons/right-arrow.svg');
   position: relative;
   top: 0.2em;
   margin-left: 0.5em;
+  display: inline-block;
+  width: 0.5em;
+}
+
+.left-arrow:before {
+  content: url('../assets/icons/left-arrow.svg');
+  position: relative;
+  top: 0.2em;
+  margin-right: 0.5em;
   display: inline-block;
   width: 0.5em;
 }
