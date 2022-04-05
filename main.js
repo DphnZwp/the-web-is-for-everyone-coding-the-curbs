@@ -25,6 +25,7 @@ app.get('/', (request, response) => {
   })
 })
 
+// All smartzones
 app.get('/smartzones', (request, response) => {
   fetchJson(url).then(function (
     jsonData
@@ -36,6 +37,7 @@ app.get('/smartzones', (request, response) => {
   })
 })
 
+// Filter name
 app.get('smartzones/name/:smartzoneId', (request, response) => {
   fetchJson(`${url}/${request.params.smartzoneId}`).then(function (
     jsonData
@@ -67,10 +69,12 @@ app.get('/add', (request, response) => {
     })
 })
 
+// Server port
 const server = app.listen(port, () => {
   console.log(`Application started on port: ${port}`)
 })
 
+// Fetch
 async function fetchJson(url, postData = {}) {
   return await fetch(url, postData)
     .then((response) => response.json())
