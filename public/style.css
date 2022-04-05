@@ -211,7 +211,7 @@ li {
 }
 
 .button-post {
-  padding: 0.9em 3em;
+  padding: 0.8635em 3em;
   font-family: 'Rajdhani', sans-serif;
   display: block;
   font-size: 1rem;
@@ -244,7 +244,7 @@ li {
 }
 
 .button-put {
-  padding: 0.9em 3em;
+  padding: 0.8635em 3em;
   font-family: 'Rajdhani', sans-serif;
   display: block;
   font-size: 1rem;
@@ -277,7 +277,7 @@ li {
 }
 
 .button-delete {
-  padding: 0.9em 3em;
+  padding: 0.8635em 3em;
   font-family: 'Rajdhani', sans-serif;
   display: block;
   font-size: 1rem;
@@ -324,7 +324,7 @@ li {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  height: 3.1em;
+  height: 3.0635em;
   border: 0.127em solid var(--dark-blue);
   border-radius: 2em;
   cursor: pointer;
