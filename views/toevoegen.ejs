@@ -7,58 +7,57 @@
     op alle smartzones, naam, functie, stad en locatie.
   </p>
 </section>
+
 <article class="smartzone-buttons">
-  <button class="toggle-form-post">Smart zone toevoegen</button>
+  <a class="button-post" href="/toevoegen">Smart zone toevoegen</a>
   <button class="toggle-form-put">Smart zone bewerken</button>
   <button class="toggle-form-delete">Smart zone verwijderen</button>
 </article>
-<form
-  id="smartzonePostForm"
-  action="https://codingthecurbs.api.fdnd.nl/v1/smartzone"
-  method="post"
->
+
+<form action="https://codingthecurbs.api.fdnd.nl/v1/smartzone" method="post">
   <h2 class="style-h3">Smart zone toevoegen</h2>
   <div>
     <label for="name">Naam</label>
-    <input type="text" id="name" />
+    <input type="text" name="name" />
   </div>
   <div>
     <label for="town">Stad</label>
-    <input type="text" id="town" />
+    <input type="text" name="town" />
   </div>
   <div>
     <label for="location">Locatie</label>
-    <input type="text" id="location" />
+    <input type="text" name="location" />
   </div>
   <div>
     <label for="function">Functie</label>
-    <input type="text" id="function" />
+    <input type="text" name="function" />
   </div>
   <div>
     <label for="time">Tijdstip</label>
-    <input type="text" id="time" />
+    <input type="text" name="time" />
   </div>
   <div>
     <label for="size">Grootte (plek)</label>
-    <input type="text" id="size" />
+    <input type="text" name="size" />
   </div>
   <div>
     <label for="utilization">Gebruik (%)</label>
-    <input type="text" id="utilization" />
+    <input type="text" name="utilization" />
   </div>
   <div>
     <label for="description">Omschrijving</label>
-    <input type="text" id="description" />
+    <input type="text" name="description" />
   </div>
   <div>
     <label for="image">Foto (url)</label>
-    <input type="text" placeholder="https://foto.com" id="image" />
+    <input type="text" placeholder="https://foto.com" name="image" />
   </div>
   <div class="form-buttons">
     <button type="submit">Toevoegen</button>
     <button type="reset">Annuleren</button>
   </div>
 </form>
+
 <article class="sorting">
   <a class="white-button" href="/">Terug naar smart zones</a>
   <select class="select-name" onChange="window.location.href=this.value">
@@ -68,6 +67,7 @@
     <% }) %>
   </select>
 </article>
+
 <section class="tables">
   <% smartzones.forEach((smartzone) => { %>
     <table>
