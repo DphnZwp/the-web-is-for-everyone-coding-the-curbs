@@ -324,7 +324,7 @@ li {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  height: 3.3em;
+  height: 3.1em;
   border: 0.127em solid var(--dark-blue);
   border-radius: 2em;
   cursor: pointer;
