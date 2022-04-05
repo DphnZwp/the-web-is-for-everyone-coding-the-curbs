@@ -10,8 +10,8 @@
 
 <article class="smartzone-buttons">
   <a class="button-post" href="/add">Smart zone toevoegen</a>
-  <button class="toggle-form-put">Smart zone bewerken</button>
-  <button class="toggle-form-delete">Smart zone verwijderen</button>
+  <a class="button-put" href="/edit">Smart zone bewerken</a>
+  <a class="button-put" href="/remove">Smart zone verwijderen</a>
 </article>
 
 <article class="sorting">
@@ -22,7 +22,6 @@
     <option value="/smartzones/name/<%- smartzone.smartzoneId %>"><%- smartzone.name %></option>
     <% }) %>
   </select>
-  <!--
   <select class="select-function">
     <option>Sorteer op functie</option>
     <option>Deelmobiliteit</option>
@@ -45,7 +44,7 @@
     <option>Overtoom 450</option>
     <option>West-kruiskade 93</option>
     <option>Witte de Withstraat 32</option>
-  </select> -->
+  </select>
 </article>
 
 <section class="tables">

@@ -37,7 +37,7 @@ app.get('/smartzones', (request, response) => {
   })
 })
 
-// Filter name
+// Filter names
 app.get('/smartzones/name/:smartzoneId', (request, response) => {
   fetchJson(`${url}/${request.params.smartzoneId}`).then(function (
     jsonData
@@ -56,16 +56,56 @@ app.post('/add', urlencodedParser, (request,response) =>{
     body: JSON.stringify(request.body),
     headers: {'Content-Type': 'application/json'}
   }
-  fetchJson(url, postData).then(function (jsonData) {
+  fetchJson(url, postData).then(function () {
     response.render('add', {
-      title: 'Smartzone toevoegen',
+      title: 'Smart zone toevoegen',
     })
   })
 })
 
 app.get('/add', (request, response) => {
     response.render('add', {
-      title: 'Smartzone toevoegen',
+      title: 'Smart zone toevoegen',
+    })
+})
+
+// PUT form
+app.post('/edit', urlencodedParser, (request,response) =>{
+  const postData = {
+    method: 'put',
+    body: JSON.stringify(request.body),
+    headers: {'Content-Type': 'application/json'}
+  }
+  fetchJson(url, postData).then(function () {
+    response.render('edit', {
+      title: 'Smart zone bewerken',
+    })
+  })
+})
+
+app.get('/edit', (request, response) => {
+    response.render('edit', {
+      title: 'Smart zone bewerken',
+    })
+})
+
+// DELETE form
+app.post('/remove', urlencodedParser, (request,response) =>{
+  const postData = {
+    method: 'delete',
+    body: JSON.stringify(request.body),
+    headers: {'Content-Type': 'application/json'}
+  }
+  fetchJson(url, postData).then(function () {
+    response.render('remove', {
+      title: 'Smart zone verwijderen',
+    })
+  })
+})
+
+app.get('/remove', (request, response) => {
+    response.render('remove', {
+      title: 'Smart zone verwijderen',
     })
 })
 

@@ -12,7 +12,7 @@
   --selection: #84389e;
 }
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
 
@@ -168,6 +168,45 @@ li {
   align-items: center;
 }
 
+.white-button {
+  padding: 0.9em 3em;
+  margin: 1em 0;
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  width: max-content;
+  border-radius: 2em;
+  cursor: pointer;
+  color: #000;
+  background: white;
+  box-shadow: inset 0px 0px 0px 2.4px var(--dark-blue);
+}
+
+.white-button:hover {
+  font-size: 1rem;
+  color: var(--black);
+  background: white;
+  box-shadow: inset 0px 0px 0px 2.4px var(--dark-blue);
+}
+
+.right-arrow:after {
+  content: url('../assets/icons/right-arrow.svg');
+  position: relative;
+  top: 0.2em;
+  margin-left: 0.6em;
+  display: inline-block;
+  width: 0.5em;
+}
+
+.left-arrow:before {
+  content: url('../assets/icons/left-arrow.svg');
+  position: relative;
+  top: 0.2em;
+  margin-right: 0.6em;
+  display: inline-block;
+  width: 0.5em;
+}
+
 .button-post {
   padding: 0.9em 3em;
   font-family: 'Rajdhani', sans-serif;
@@ -201,46 +240,27 @@ li {
   content: url('../assets/icons/cross-blue.svg');
 }
 
-.white-button {
+.button-put {
   padding: 0.9em 3em;
-  margin: 1em 0;
+  font-family: 'Rajdhani', sans-serif;
   display: block;
   font-size: 1rem;
   font-weight: 500;
+  color: var(--white);
   width: max-content;
+  background-image: var(--cta-color);
+  border: none;
   border-radius: 2em;
   cursor: pointer;
-  color: #000;
+}
+
+.button-put:hover {
+  color: var(--blue);
   background: white;
-  box-shadow: inset 0px 0px 0px 2.4px var(--dark-blue);
+  box-shadow: inset 0px 0px 0px 2px var(--blue);
 }
 
-.white-button:hover {
-  font-size: 1rem;
-  color: var(--black);
-  background: white;
-  box-shadow: inset 0px 0px 0px 2.4px var(--dark-blue);
-}
-
-.right-arrow:after {
-  content: url('../assets/icons/right-arrow.svg');
-  position: relative;
-  top: 0.2em;
-  margin-left: 0.5em;
-  display: inline-block;
-  width: 0.5em;
-}
-
-.left-arrow:before {
-  content: url('../assets/icons/left-arrow.svg');
-  position: relative;
-  top: 0.2em;
-  margin-right: 0.5em;
-  display: inline-block;
-  width: 0.5em;
-}
-
-.toggle-form-put:after {
+.button-put:after {
   content: url('../assets/icons/edit.svg');
   position: relative;
   top: 0.1em;
@@ -249,7 +269,7 @@ li {
   width: 1em;
 }
 
-.toggle-form-put:hover:after {
+.button-put:hover:after {
   content: url('../assets/icons/edit-blue.svg');
 }
 
@@ -291,7 +311,7 @@ li {
 
 .select-name {
   background-position-x: 8.5em;
-  width: 12.2em;
+  width: 11.8em;
 }
 
 .select-function {
@@ -487,7 +507,9 @@ button[type='submit'] {
   .white-button,
   .white-button:hover,
   .button-post,
-  .button-post:hover {
+  .button-post:hover,
+  .button-put,
+  .button-put:hover {
     font-size: 1.1875rem;
   }
 

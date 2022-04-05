@@ -1,0 +1,32 @@
+<%- include('./partials/head') %>
+
+<section id="smartzones">
+  <h1><%= title %></h1>
+  <p>
+    Verwijder een smartzone uit de api.
+  </p>
+</section>
+
+<article class="smartzone-buttons">
+  <a class="button-post" href="/add">Smart zone toevoegen</a>
+  <a class="button-put" href="/edit">Smart zone bewerken</a>
+  <a class="button-put" href="/remove">Smart zone verwijderen</a>
+</article>
+
+<article class="sorting">
+  <a class="white-button left-arrow" href="/">Terug naar smart zones</a>
+  <a class="white-button right-arrow" href="/smartzones">Alle smart zones</a>
+</article>
+
+<form action="/remove" method="post">
+  <div>
+    <label for="smartzoneId">SmartzoneId</label>
+    <input type="text" name="smartzoneId" />
+  </div>
+  <div class="form-buttons">
+    <button type="submit">Verwijderen</button>
+    <button type="reset">Annuleren</button>
+  </div>
+</form>
+
+<%- include('./partials/foot') %>
