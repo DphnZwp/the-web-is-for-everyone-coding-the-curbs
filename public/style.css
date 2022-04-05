@@ -324,7 +324,6 @@ li {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  width: 13.5em;
   height: 3.3em;
   border: 0.127em solid var(--dark-blue);
   border-radius: 2em;
@@ -337,15 +336,13 @@ li {
 }
 
 .select-function {
-  background-position-x: 10.5em;
+  background-position-x: 10em;
+  width: 12.8em;
 }
 
 .select-town {
-  background-position-x: 9.5em;
-}
-
-.select-location {
-  background-position-x: 10.8em;
+  background-position-x: 9em;
+  width: 11.9em;
 }
 
 .loading-state {
