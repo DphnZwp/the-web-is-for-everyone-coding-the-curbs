@@ -273,7 +273,27 @@ li {
   content: url('../assets/icons/edit-blue.svg');
 }
 
-.toggle-form-delete:after {
+.button-delete {
+  padding: 0.9em 3em;
+  font-family: 'Rajdhani', sans-serif;
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  width: max-content;
+  background-image: var(--cta-color);
+  border: none;
+  border-radius: 2em;
+  cursor: pointer;
+}
+
+.button-delete:hover {
+  color: var(--blue);
+  background: white;
+  box-shadow: inset 0px 0px 0px 2px var(--blue);
+}
+
+.button-delete:after {
   content: url('../assets/icons/trash.svg');
   position: relative;
   top: 0.1em;
@@ -282,10 +302,9 @@ li {
   width: 1em;
 }
 
-.toggle-form-delete:hover:after {
-  content: url('../assets/icons/trash-blue.svg');
+.button-delete:hover:after {
+  content: url('../assets/icons/trash.svg');
 }
-
 .select-name, 
 .select-function,
 .select-town,
@@ -485,7 +504,19 @@ button[type='submit'] {
     position: relative;
   }
 
-  button {
+  button,
+  .select-function,
+  .select-location,
+  .select-name,
+  .select-town,
+  .white-button,
+  .white-button:hover,
+  .button-post,
+  .button-post:hover,
+  .button-put,
+  .button-put:hover,
+  .button-delete,
+  .button-delete:hover {
     font-size: 1.1875rem;
   }
 
@@ -498,19 +529,6 @@ button[type='submit'] {
     margin-bottom: 1em;
     flex-direction: row;
     gap: 1em;
-  }
-
-  .select-function,
-  .select-location,
-  .select-name,
-  .select-town,
-  .white-button,
-  .white-button:hover,
-  .button-post,
-  .button-post:hover,
-  .button-put,
-  .button-put:hover {
-    font-size: 1.1875rem;
   }
 
   .tables {

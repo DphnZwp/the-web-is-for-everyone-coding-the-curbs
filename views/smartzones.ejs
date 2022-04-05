@@ -11,7 +11,7 @@
 <article class="smartzone-buttons">
   <a class="button-post" href="/add">Smart zone toevoegen</a>
   <a class="button-put" href="/edit">Smart zone bewerken</a>
-  <a class="button-put" href="/remove">Smart zone verwijderen</a>
+  <a class="button-delete" href="/remove">Smart zone verwijderen</a>
 </article>
 
 <article class="sorting">
@@ -19,7 +19,7 @@
   <select class="select-name" onChange="window.location.href=this.value">
     <option value="/">Filter op naam</option>
     <% smartzones.forEach((smartzone) => { %>
-    <option value="/name/<%- smartzone.smartzoneId %>"><%- smartzone.name %></option>
+    <option value="/smartzones/name/<%- smartzone.smartzoneId %>"><%- smartzone.name %></option>
     <% }) %>
   </select>
   <select class="select-function">
