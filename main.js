@@ -14,6 +14,7 @@ app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.set('views', './views')
 app.use('/assets', express.static('assets'))
+app.use('/css', express.static('css'))
 app.use('/assets/icons', express.static('icons'))
 
 app.get('/', (request, response) => {
@@ -21,30 +22,6 @@ app.get('/', (request, response) => {
     response.render('index', {
       title: 'Smart Zones',
       smartzones: jsonData.data,
-    })
-  })
-})
-
-// All smartzones
-app.get('/smartzones', (request, response) => {
-  fetchJson(url).then(function (
-    jsonData
-  ) {
-    response.render('smartzones', {
-      title: 'Alle smart zones',
-      smartzones: jsonData.data,
-    })
-  })
-})
-
-// Filter names
-app.get('/smartzones/name/:smartzoneId', (request, response) => {
-  fetchJson(`${url}/${request.params.smartzoneId}`).then(function (
-    jsonData
-  ) {
-    response.render('name', {
-      title: 'Smart zone van',
-      name: jsonData.data[0],
     })
   })
 })
@@ -108,6 +85,42 @@ app.get('/remove', (request, response) => {
       title: 'Smart zone verwijderen',
     })
 })
+
+// All smartzones
+app.get('/smartzones', (request, response) => {
+  fetchJson(url).then(function (
+    jsonData
+  ) {
+    response.render('smartzones', {
+      title: 'Alle smart zones',
+      smartzones: jsonData.data,
+    })
+  })
+})
+
+// Filter names
+app.get('/smartzones/name/:smartzoneId', (request, response) => {
+  fetchJson(`${url}/${request.params.smartzoneId}`).then(function (
+    jsonData
+  ) {
+    response.render('name', {
+      title: 'Smart zone van',
+      name: jsonData.data[0],
+    })
+  })
+})
+
+// Filter functions
+// app.get('/smartzones/function/:smartzoneId', (request, response) => {
+//   fetchJson(`${url}/${request.params.smartzoneId}`).then(function (
+//     jsonData
+//   ) {
+//     response.render('function', {
+//       title: 'Smart zone van',
+//       function: jsonData.data[0],
+//     })
+//   })
+// })
 
 // Server port
 const server = app.listen(port, () => {
