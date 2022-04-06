@@ -31,8 +31,8 @@ Het doel is om met Node.js dynamische data van de Coding the Curbs REST API te v
 - 💀 HTML5
 - 🧍 CSS3
 - ⚽ JavaScript
-- Node.js
-- Express
+- 🐸 Node.js
+- 🥇 Express
 
 ## Installatie
 1. Clone of download deze respository.
