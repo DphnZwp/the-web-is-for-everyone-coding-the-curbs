@@ -1,12 +1,12 @@
 > _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
 # 🚐 Smart Zones pagina van Coding the Curbs
-Bouw de Smart Zones pagina van de Coding the Curbs website waarbij de focus ligt op het ophalen en verzenden van de Smart Zones content (data) uit en naar de Coding the Curbs REST API.
+De Smart Zones pagina moet verbeterd worden met Node.js en weer data bevatten van de Coding the Curbs REST API.
 
 ## Link van de API
 [https://codingthecurbs.api.fdnd.nl/v1/smartzone](https://codingthecurbs.api.fdnd.nl/v1/smartzone)
 
-![screencapture-daphnecodingthecurbssmartzones-student-fdnd-nl-2022-03-24-11_40_07](https://user-images.githubusercontent.com/69635977/159898897-7fa3053b-cbd8-4357-9d51-26502a8c0f13.png)
+![screencapture-localhost-9000-2022-04-06-13_05_01](https://user-images.githubusercontent.com/69635977/161961338-97c874f2-28ca-491b-8119-ffd89b0c03f6.png)
 
 ## Inhoudsopgave
 
@@ -18,7 +18,7 @@ Bouw de Smart Zones pagina van de Coding the Curbs website waarbij de focus ligt
   * [Licentie](#licentie)
 
 ## Beschrijving
-Het doel is om dynamische data van de Coding the Curbs REST API te vertalen naar een vorm die bruikbaar en inzichtelijk is op een webpagina. Om dit te bereiken heb ik de data van de api in tabellen gedaan en de foto's van de api er naast de tabellen gezet. Dit doe ik door data te fetchen en te renderen met async await. Verder kan je smartzones sorteren op naam, functie, stad en locatie. Als je een beheerder bent kan je ook smartzones toevoegen, bewerken en verwijderen met drie verschillende formulieren.
+Het doel is om met Node.js dynamische data van de Coding the Curbs REST API te vertalen naar een vorm die bruikbaar en inzichtelijk is op een webpagina. Om dit te bereiken moet ik data fetchen in de serverside en dit met html renderen op de browser. 
 
 ## Kenmerken
 
@@ -31,6 +31,8 @@ Het doel is om dynamische data van de Coding the Curbs REST API te vertalen naar
 - 💀 HTML5
 - 🧍 CSS3
 - ⚽ JavaScript
+- Node.js
+- Express
 
 ## Installatie
 1. Clone of download deze respository.
