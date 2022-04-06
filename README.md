@@ -42,15 +42,15 @@ Hieronder zijn commandlines van HTTPS en SSH die je kunt uitvoeren in de opdrach
 **Installeren met HTTPS**
 
 ```
-git clone https://github.com/DphnZwp/keep-users-in-control-coding-the-curbs.git
-cd https://github.com/DphnZwp/keep-users-in-control-coding-the-curbs.git
+git clone https://github.com/DphnZwp/connect-your-tribe-fdnd-crud-form
+cd https://github.com/DphnZwp/connect-your-tribe-fdnd-crud-form.git
 ```
 
 **Installeren met SSH**
 
 ```
-git@github.com:DphnZwp/the-startup-coding-the-curbs.git
-cd keep-users-in-control-coding-the-curbs
+git@github.com:DphnZwp/connect-your-tribe-fdnd-crud-form.git
+cd connect-your-tribe-fdnd-crud-form.git
 
 ```
 
