@@ -3,9 +3,6 @@
 # 🚐 Smart Zones pagina van Coding the Curbs
 De Smart Zones pagina moet verbeterd worden en via server side rendering (ssr) worden getoond aan de eindgebruiker.
 
-## Link van de API
-[https://codingthecurbs.api.fdnd.nl/v1/smartzone](https://codingthecurbs.api.fdnd.nl/v1/smartzone)
-
 ![screencapture-localhost-9000-2022-04-06-13_05_01](https://user-images.githubusercontent.com/69635977/161961338-97c874f2-28ca-491b-8119-ffd89b0c03f6.png)
 
 ## Inhoudsopgave
