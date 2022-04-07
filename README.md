@@ -52,8 +52,9 @@ cd connect-your-tribe-fdnd-crud-form.git
 ## Bronnen
 - [https://ejs.co/](https://ejs.co/)
 - [https://codeforgeek.com/handle-get-post-request-express-4/](https://codeforgeek.com/handle-get-post-request-express-4/)
-- [https://www.javatpoint.com/expressjs-post](https://www.javatpoint.com/expressjs-post)\
-**API**
+- [https://www.javatpoint.com/expressjs-post](https://www.javatpoint.com/expressjs-post)
+
+### API
 - [https://codingthecurbs.api.fdnd.nl/v1/smartzone](https://codingthecurbs.api.fdnd.nl/v1/smartzone)
 
 ## Licentie
