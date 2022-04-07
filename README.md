@@ -28,7 +28,7 @@ Het doel is om met Node.js dynamische data van de Coding the Curbs REST API te v
 - ✍️ Adobe Illustrator
 - ✍️ Potlood, Stift en Papier
 
-## Installatie
+## Installatie & Gebruik
 1. Clone of download deze respository.
 2. Ga naar de root directory van het project.
 3. Open het index.html bestand. Hier kan je de eerste pagina zien van de website.
@@ -49,8 +49,6 @@ git@github.com:DphnZwp/connect-your-tribe-fdnd-crud-form.git
 cd connect-your-tribe-fdnd-crud-form.git
 
 ```
-
-## Gebruik
 
 ## Bronnen
 
