@@ -15,7 +15,7 @@ De Smart Zones pagina moet verbeterd worden en via server side rendering (ssr) w
   * [Licentie](#licentie)
 
 ## Beschrijving
-Het doel is om met Node.js dynamische data van de Coding the Curbs REST API te vertalen naar een vorm die bruikbaar en inzichtelijk is op een webpagina. Om dit te bereiken moet ik data fetchen in de serverside en dit met html renderen op de browser. 
+Het doel is om met Node.js dynamische data van de Coding the Curbs REST API te vertalen naar een vorm die bruikbaar en inzichtelijk is op een webpagina. Om dit te bereiken moet ik data fetchen in de serverside en dit met html renderen op de browser. Ook wil ik smart zones kunnen sorteren en een betere accessibility. 
 
 ## Kenmerken
 
