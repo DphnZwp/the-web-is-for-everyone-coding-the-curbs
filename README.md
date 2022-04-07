@@ -1,7 +1,7 @@
 > _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
 # 🚐 Smart Zones pagina van Coding the Curbs
-De Smart Zones pagina moet verbeterd worden met Node.js en weer data bevatten van de Coding the Curbs REST API.
+De Smart Zones pagina moet verbeterd worden en via server side rendering (ssr) worden getoond aan de eindgebruiker.
 
 ## Link van de API
 [https://codingthecurbs.api.fdnd.nl/v1/smartzone](https://codingthecurbs.api.fdnd.nl/v1/smartzone)
