@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 9000
+// Fetch
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
 const url = 'https://codingthecurbs.api.fdnd.nl/v1/smartzone'
 // POST
@@ -12,10 +13,7 @@ app.use(express.static('public'))
 
 // Hook up a template engine
 app.set('view engine', 'ejs')
-app.set('views', './views')
-app.use('/assets', express.static('assets'))
-app.use('/css', express.static('css'))
-app.use('/assets/icons', express.static('icons'))
+app.set('views', 'views')
 
 app.get('/', (request, response) => {
   fetchJson(url).then(function (jsonData) {
@@ -27,7 +25,7 @@ app.get('/', (request, response) => {
 })
 
 // POST form
-app.post('/add', urlencodedParser, (request,response) =>{
+app.post('/toevoegen', urlencodedParser, (request,response) =>{
   const postData = {
     method: 'post',
     body: JSON.stringify(request.body),
@@ -40,14 +38,14 @@ app.post('/add', urlencodedParser, (request,response) =>{
   })
 })
 
-app.get('/add', (request, response) => {
+app.get('/toevoegen', (request, response) => {
     response.render('add', {
       title: 'Smart zone toevoegen',
     })
 })
 
 // PUT form
-app.post('/edit', urlencodedParser, (request,response) =>{
+app.post('/bewerken', urlencodedParser, (request,response) =>{
   const postData = {
     method: 'put',
     body: JSON.stringify(request.body),
@@ -60,14 +58,14 @@ app.post('/edit', urlencodedParser, (request,response) =>{
   })
 })
 
-app.get('/edit', (request, response) => {
+app.get('/bewerken', (request, response) => {
     response.render('edit', {
       title: 'Smart zone bewerken',
     })
 })
 
 // DELETE form
-app.post('/remove', urlencodedParser, (request,response) =>{
+app.post('/verwijderen', urlencodedParser, (request,response) =>{
   const postData = {
     method: 'delete',
     body: JSON.stringify(request.body),
@@ -80,7 +78,7 @@ app.post('/remove', urlencodedParser, (request,response) =>{
   })
 })
 
-app.get('/remove', (request, response) => {
+app.get('/verwijderen', (request, response) => {
     response.render('remove', {
       title: 'Smart zone verwijderen',
     })
@@ -99,11 +97,11 @@ app.get('/smartzones', (request, response) => {
 })
 
 // Filter names
-app.get('/smartzones/name/:smartzoneId', (request, response) => {
+app.get('/smartzones/naam/:smartzoneId', (request, response) => {
   fetchJson(`${url}/${request.params.smartzoneId}`).then(function (
     jsonData
   ) {
-    response.render('name', {
+    response.render('filtering/name', {
       title: 'Smart zone van',
       name: jsonData.data[0],
     })
@@ -111,16 +109,114 @@ app.get('/smartzones/name/:smartzoneId', (request, response) => {
 })
 
 // Filter functions
-// app.get('/smartzones/function/:smartzoneId', (request, response) => {
-//   fetchJson(`${url}/${request.params.smartzoneId}`).then(function (
-//     jsonData
-//   ) {
-//     response.render('function', {
-//       title: 'Smart zone van',
-//       function: jsonData.data[0],
-//     })
-//   })
-// })
+// Deelmobiliteit
+app.get('/smartzones/functie/deelmobiliteit', (request, response) => {
+  fetchJson(url).then(function (
+    jsonData
+  ) {
+    response.render('filtering/deelmobiliteit', {
+      title: 'Smart zones van deelmobiliteit',
+      smartzones: jsonData.data,
+    })
+  })
+})
+
+// Laden en lossen
+app.get('/smartzones/functie/ladenenlossen', (request, response) => {
+  fetchJson(url).then(function (
+    jsonData
+  ) {
+    response.render('filtering/laden', {
+      title: 'Smart zones van laden en lossen',
+      smartzones: jsonData.data,
+    })
+  })
+})
+
+// Parkeren
+app.get('/smartzones/functie/parkeren', (request, response) => {
+  fetchJson(url).then(function (
+    jsonData
+  ) {
+    response.render('filtering/parkeren', {
+      title: 'Smart zones van parkeren',
+      smartzones: jsonData.data,
+    })
+  })
+})
+
+// Recreatie
+app.get('/smartzones/functie/recreatie', (request, response) => {
+  fetchJson(url).then(function (
+    jsonData
+  ) {
+    response.render('filtering/recreatie', {
+      title: 'Smart zones van recreatie',
+      smartzones: jsonData.data,
+    })
+  })
+})
+
+// Filter towns
+// Amsterdam
+app.get('/smartzones/stad/amsterdam', (request, response) => {
+  fetchJson(url).then(function (
+    jsonData
+  ) {
+    response.render('filtering/amsterdam', {
+      title: 'Smart zones van Amsterdam',
+      smartzones: jsonData.data,
+    })
+  })
+})
+
+// Rotterdam
+app.get('/smartzones/stad/rotterdam', (request, response) => {
+  fetchJson(url).then(function (
+    jsonData
+  ) {
+    response.render('filtering/rotterdam', {
+      title: 'Smart zones van Rotterdam',
+      smartzones: jsonData.data,
+    })
+  })
+})
+
+// Schiedam
+app.get('/smartzones/stad/schiedam', (request, response) => {
+  fetchJson(url).then(function (
+    jsonData
+  ) {
+    response.render('filtering/schiedam', {
+      title: 'Smart zones van Schiedam',
+      smartzones: jsonData.data,
+    })
+  })
+})
+
+// Utrecht
+app.get('/smartzones/stad/utrecht', (request, response) => {
+  fetchJson(url).then(function (
+    jsonData
+  ) {
+    response.render('filtering/utrecht', {
+      title: 'Smart zones van Utrecht',
+      smartzones: jsonData.data,
+    })
+  })
+})
+
+// Filter locations
+app.get('/smartzones/location/:smartzoneId', (request, response) => {
+  fetchJson(`${url}/${request.params.smartzoneId}`).then(function (
+    jsonData
+  ) {
+    response.render('filtering/location', {
+      title: 'Smart zone van',
+      location: jsonData.data[0],
+    })
+  })
+})
 
 // Server port
 const server = app.listen(port, () => {

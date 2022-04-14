@@ -8,35 +8,41 @@
   </p>
 </section>
 
-<article class="smartzone-buttons">
-  <a class="button-post" href="/add">Smart zone toevoegen</a>
-  <a class="button-put" href="/edit">Smart zone bewerken</a>
-  <a class="button-delete" href="/remove">Smart zone verwijderen</a>
-</article>
+<section class="smartzone-buttons">
+  <a class="button-post" href="/toevoegen">Smart zone toevoegen</a>
+  <a class="button-put" href="/bewerken">Smart zone bewerken</a>
+  <a class="button-delete" href="/verwijderen">Smart zone verwijderen</a>
+</section>
 
-<article class="sorting">
+<section class="sorting">
   <a class="white-button right-arrow" href="/smartzones">Alle smart zones</a>
   <select class="select-name" onChange="window.location.href=this.value">
-    <option value="/">Filter op naam</option>
+    <option value="/">Sorteer op naam</option>
     <% smartzones.forEach((smartzone) => { %>
-    <option value="/smartzones/name/<%- smartzone.smartzoneId %>"><%- smartzone.name %></option>
+    <option value="/smartzones/naam/<%- smartzone.smartzoneId %>"><%- smartzone.name %></option>
     <% }) %>
   </select>
-  <select class="select-function">
-    <option>Sorteer op functie</option>
-    <option>Deelmobiliteit</option>
-    <option>Laden en lossen</option>
-    <option>Laden en lossen Parkeren Deelmobiliteit</option>
-    <option>Laden en lossen Recreatie</option>
+  <select class="select-function" onChange="window.location.href=this.value">
+    <option value="/">Sorteer op functie</option>
+    <option value="/smartzones/functie/deelmobiliteit">Deelmobiliteit</option>
+    <option value="/smartzones/functie/ladenenlossen">Laden en lossen</option>
+    <option value="/smartzones/functie/parkeren">Parkeren</option>
+    <option value="/smartzones/functie/recreatie">Recreatie</option>
   </select>
-  <select class="select-town">
-    <option>Sorteer op stad</option>
-    <option>Amsterdam</option>
-    <option>Rotterdam</option>
-    <option>Schiedam</option>
-    <option>Utrecht</option>
+  <select class="select-town" onChange="window.location.href=this.value">
+    <option value="/">Sorteer op stad</option>
+    <option value="/smartzones/stad/amsterdam">Amsterdam</option>
+    <option value="/smartzones/stad/rotterdam">Rotterdam</option>
+    <option value="/smartzones/stad/schiedam">Schiedam</option>
+    <option value="/smartzones/stad/utrecht">Utrecht</option>
   </select>
-</article>
+  <select class="select-location" onChange="window.location.href=this.value">
+    <option value="/">Sorteer op location</option>
+    <% smartzones.forEach((smartzone) => { %>
+      <option value="/smartzones/location/<%- smartzone.smartzoneId %>"><%- smartzone.location %></option>
+    <% }) %>
+  </select>
+</section>
 
 <section class="tables">
   <% 
@@ -45,41 +51,55 @@
       return smartzone.town === 'Utrecht'
     })
     .map((smartzone) => { %>
-    <table>
-      <tbody><tr>
-          <th>Naam</th>
-          <td><%- smartzone.name %></td>
-      </tr>
-      <tr>
-          <th>Stad</th>
-          <td><%- smartzone.town %></td>
-      </tr>
-      <tr>
-          <th>Locatie</th>
-          <td><%- smartzone.location %></td>
-      </tr>
-      <tr>
-          <th>functie</th>
-          <td><%- smartzone.function %></td>
-      </tr>
-      <tr>
-          <th>Tijdstip</th>
-          <td><%- smartzone.time %></td>
-      </tr>
-      <tr>
-          <th>Grootte (plek)</th>
-          <td><%- smartzone.size %></td>
-      </tr>
-      <tr>
-          <th>Gebruik (%)</th>
-          <td><%- smartzone.utilization %></td>
-      </tr>
-      <tr>
-          <th>Omschrijving</th>
-          <td><%- smartzone.description %></td>
-      </tr>
+      <table>
+        <tbody>
+        <tr class="background-image">
+					<th><%- smartzone.name %></th>
+        </tr>
+        <tr>
+					<th>Stad</th>
+        </tr>
+        <tr>
+					<td><%- smartzone.town %></td>
+        </tr>
+        <tr>
+					<th>Locatie</th>
+        </tr>
+        <tr>
+					<td><%- smartzone.location %></td>
+        </tr>
+        <tr>
+					<th>functie</th>
+        </tr>
+        <tr>
+					<td><%- smartzone.function %></td>
+        </tr>
+				<tr>
+					<th>Tijdstip</th>
+				</tr>
+				<tr>
+					<td><%- smartzone.time %></td>
+				</tr>
+				<tr>
+					<th>Grootte (plek)</th>
+				</tr>
+				<tr>
+					<td><%- smartzone.size %></td>
+				</tr>
+				<tr>
+					<th>Gebruik (%)</th>
+				</tr>
+				<tr>
+					<td><%- smartzone.utilization %></td>
+				</tr>
+				<tr>
+					<th>Omschrijving</th>
+				</tr>
+				<tr>
+					<td><%- smartzone.description %></td>
+				</tr>
       </tbody></table>
-      <img src="<%- smartzone.image %>" alt="Google maps afbeelding">
+      <img class="image-table" src="<%- smartzone.image %>" alt="Google maps afbeelding">
   <% }) %>
 </section>
 

@@ -1,0 +1,70 @@
+<%- include('../partials/head') %>
+
+<section id="smartzones">
+  <h1><%= title %> <%- location.location %></h1>
+</section>
+
+<section class="smartzone-buttons">
+  <a class="button-post" href="/toevoegen">Smart zone toevoegen</a>
+  <a class="button-put" href="/bewerken">Smart zone bewerken</a>
+  <a class="button-delete" href="/verwijderen">Smart zone verwijderen</a>
+</section>
+
+<section class="sorting">
+  <a class="white-button left-arrow" href="/">Terug naar smart zones</a>
+  <a class="white-button right-arrow" href="/smartzones">Alle smart zones</a>
+</section>
+
+<section class="tables">
+    <table>
+        <tbody>
+        <tr class="background-image">
+					<th><%- location.name %></th>
+        </tr>
+        <tr>
+					<th>Stad</th>
+        </tr>
+        <tr>
+					<td><%- location.town %></td>
+        </tr>
+        <tr>
+					<th>Locatie</th>
+        </tr>
+        <tr>
+					<td><%- location.location %></td>
+        </tr>
+        <tr>
+					<th>functie</th>
+        </tr>
+        <tr>
+					<td><%- location.function %></td>
+        </tr>
+				<tr>
+					<th>Tijdstip</th>
+				</tr>
+				<tr>
+					<td><%- location.time %></td>
+				</tr>
+				<tr>
+					<th>Grootte (plek)</th>
+				</tr>
+				<tr>
+					<td><%- location.size %></td>
+				</tr>
+				<tr>
+					<th>Gebruik (%)</th>
+				</tr>
+				<tr>
+					<td><%- location.utilization %></td>
+				</tr>
+				<tr>
+					<th>Omschrijving</th>
+				</tr>
+				<tr>
+					<td><%- location.description %></td>
+				</tr>
+      </tbody></table>
+      <img class="image-table" src="<%- location.image %>" alt="Google maps afbeelding">
+</section>
+
+<%- include('../partials/foot') %>

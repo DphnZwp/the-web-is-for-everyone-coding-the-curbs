@@ -1,0 +1,77 @@
+<%- include('../partials/head') %>
+
+<section id="smartzones">
+  <h1><%= title %></h1>
+</section>
+
+<section class="smartzone-buttons">
+  <a class="button-post" href="/toevoegen">Smart zone toevoegen</a>
+  <a class="button-put" href="/bewerken">Smart zone bewerken</a>
+  <a class="button-delete" href="/verwijderen">Smart zone verwijderen</a>
+</section>
+
+<section class="sorting">
+  <a class="white-button left-arrow" href="/">Terug naar smart zones</a>
+  <a class="white-button right-arrow" href="/smartzones">Alle smart zones</a>
+</section>
+
+<section class="tables">
+  <% 
+  smartzones
+    .filter((smartzone) => {
+      return smartzone.function === 'Laden en lossen Recreatie'
+    })
+    .map((smartzone) => { %>
+      <table>
+        <tbody>
+        <tr class="background-image">
+					<th><%- smartzone.name %></th>
+        </tr>
+        <tr>
+					<th>Stad</th>
+        </tr>
+        <tr>
+					<td><%- smartzone.town %></td>
+        </tr>
+        <tr>
+					<th>Locatie</th>
+        </tr>
+        <tr>
+					<td><%- smartzone.location %></td>
+        </tr>
+        <tr>
+					<th>functie</th>
+        </tr>
+        <tr>
+					<td><%- smartzone.function %></td>
+        </tr>
+				<tr>
+					<th>Tijdstip</th>
+				</tr>
+				<tr>
+					<td><%- smartzone.time %></td>
+				</tr>
+				<tr>
+					<th>Grootte (plek)</th>
+				</tr>
+				<tr>
+					<td><%- smartzone.size %></td>
+				</tr>
+				<tr>
+					<th>Gebruik (%)</th>
+				</tr>
+				<tr>
+					<td><%- smartzone.utilization %></td>
+				</tr>
+				<tr>
+					<th>Omschrijving</th>
+				</tr>
+				<tr>
+					<td><%- smartzone.description %></td>
+				</tr>
+      </tbody></table>
+      <img class="image-table" src="<%- smartzone.image %>" alt="Google maps afbeelding">
+  <% }) %>
+</section>
+
+<%- include('../partials/foot') %>
